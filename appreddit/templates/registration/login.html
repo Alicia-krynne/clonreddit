@@ -1,0 +1,37 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+
+
+<div class="container">
+      {% if form.errors %}
+        <p>Password or Username is incorrect</p>
+      {% endif %}
+
+      <form  action="/accounts/login/" method="post">
+        {% csrf_token %}
+        {% bootstrap_form form%}
+
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary btn-sm" value="Login">
+        </div>
+
+        <input type="hidden" name="next" value="{{next}}">
+
+      </form>
+    
+      <div class="overlap-text"> <a href="/accounts/register/">Forgot password?</a> </div>
+      <div class="sub-content">
+        <div class="s-part">
+          <a href="/accounts/register/"> Don't have an account?</a>  
+        </div>
+    </div>
+</div>
+
+
+<!-- Empty div -->
+<div class="col-md-2">
+
+</div>
+
+{% endblock %}
