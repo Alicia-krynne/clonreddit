@@ -9,7 +9,7 @@ app_name = "appreddit"
 urlpatterns=[
     path('',views.homepage,name='Homepage'),
     path('search/',views.search_results,name='search_results'),
-    path('new/image',views.create_post, name='create_post'),
+    path('new/post',views.create_post, name='create_post'),
      
  ]
 

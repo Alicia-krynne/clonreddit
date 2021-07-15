@@ -1,0 +1,37 @@
+{% extends 'base.html' %}{% load bootstrap4%}
+{%block content%}
+<section>
+  <div class="create-post"></div>
+  <button>create a post</button>
+</section>
+
+
+
+<section>
+  
+  <div class="posts">
+    
+ <p>display  posts here</p>
+
+  </div>
+</section>
+
+<div class="profile">
+  {% if profile%}
+  {% for i in profile %}
+
+  <img src="{{i.profile.image.url}}" alt="profile picture">
+  <button>edit profile</button>
+</div>
+{%endif%}
+{%endfor%}
+<section>
+  <div class="footer">
+    <p>
+      Help Reddit Coins Reddit Premiums Content Policy  Privacy Policy</p>
+    <br>
+    <p>Reddit Inc © 2021 . All rights reserved </p>
+
+  </div>
+</section>
+{%end block%}

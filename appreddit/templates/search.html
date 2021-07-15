@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+  <div class="row text-center">
+    {% if posts %}
+    <h2> Found {{posts|length}} heres what  we have "{{message}}"</h2>
+    {% else %}
+    <h2> Found 0 posts for the search term{{message}}</h2>
+    {% endif %}
+  </div>
+
+  {% if posts %}
+  <div class="text-center">
+    <div class="panel" style="width: 40rem;">
+      <div class="panel-body">
+        {% for post in posts%}
+        
+        <div class="post-image">
+          <img src="{{post.image.url}}?w=50&h=50&fit=crop" class="gallery-image" alt=""  width=8 height=8>
+          <div class="search-post">
+          <p class="post title"style="margin:auto;"><a href="/post/{{post.id}}" style="color:black;"> {{post.tittle}}</a></p>
+        </div>
+        </div>
+        <!-- </div> -->
+
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+    {%endif %}
+</div>
+
+{% endblock %}
