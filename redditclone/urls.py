@@ -23,7 +23,7 @@ from django.contrib.auth.views import LogoutView,LoginView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('clone.urls')),
+    path('',include('appreddit.urls')),
     path('accounts/register/',
         RegistrationView.as_view(success_url='/'),
         name='django_registration_register'),
